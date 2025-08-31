@@ -16,13 +16,9 @@ function dirsToMount() {
 }
 
 const thisProgramFlag = "--this-program=";
-const thisProgramIndex = process.argv.findIndex((x) =>
-  x.startsWith(thisProgramFlag),
-);
+const thisProgramIndex = process.argv.findIndex((x) => x.startsWith(thisProgramFlag));
 const args = process.argv.slice(thisProgramIndex + 1);
-const _sysExecutable = process.argv[thisProgramIndex].slice(
-  thisProgramFlag.length,
-);
+const _sysExecutable = process.argv[thisProgramIndex].slice(thisProgramFlag.length);
 
 function fsInit(FS) {
   const mounts = dirsToMount();
@@ -43,7 +39,7 @@ async function main() {
           PYTHONINSPECT: "",
         },
         process.env,
-        { HOME: process.cwd() },
+        { HOME: process.cwd() }
       ),
       fullStdLib: false,
       fsInit,
@@ -83,7 +79,7 @@ async function main() {
         if should_load_dynlib(path)
     ])
     `,
-    { globals: sideGlobals },
+    { globals: sideGlobals }
   );
   const dynlibs = sideGlobals.get("dynlibs_to_load");
   for (const dynlib of dynlibs) {
@@ -120,7 +116,7 @@ async function main() {
         return os.terminal_size((columns, rows))
     shutil.get_terminal_size = get_terminal_size
     `,
-    { globals: sideGlobals },
+    { globals: sideGlobals }
   );
 
   let errcode;

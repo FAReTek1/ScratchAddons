@@ -1,9 +1,7 @@
 {
   "name": "Goboscript integration",
   "description": "Integration with goboscript.",
-  "tags": [
-    "community", "editor"
-  ],
+  "tags": ["community", "editor"],
   "credits": [
     {
       "name": "faretek1"
@@ -20,17 +18,13 @@
   "userscripts": [
     {
       "url": "sb2gs.js",
-      "matches": [
-        "projects"
-      ]
+      "matches": ["projects"]
     }
   ],
   "userstyles": [
     {
       "url": "style.css",
-      "matches": [
-        "projects"
-      ]
+      "matches": ["projects"]
     }
   ]
 }

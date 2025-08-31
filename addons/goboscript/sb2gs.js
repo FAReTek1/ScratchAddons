@@ -6,7 +6,7 @@ import * as pyodidePkg from "./pyodide/pyodide.mjs";
  * @param console
  * @returns {Promise<void>}
  */
-export default async function({ addon, console }) {
+export default async function ({ addon, console }) {
   const decompileButton = document.createElement("button");
   decompileButton.className = "button sa-decompile-button";
   decompileButton.title = "decompile to goboscript code";
@@ -16,10 +16,10 @@ export default async function({ addon, console }) {
   await pyodide.loadPackage("micropip");
 
   // TESTING
-  pyodide.FS.writeFile("/input.sb3", await ((await fetch(`${addon.self.dir}/test.sb3`)).bytes()));
+  pyodide.FS.writeFile("/input.sb3", await (await fetch(`${addon.self.dir}/test.sb3`)).bytes());
 
   const sb2gsWhlName = "sb2gs-2.0.0-py3-none-any.whl";
-  pyodide.FS.writeFile(`/${sb2gsWhlName}`, await ((await fetch(`${addon.self.dir}/${sb2gsWhlName}`)).bytes()));
+  pyodide.FS.writeFile(`/${sb2gsWhlName}`, await (await fetch(`${addon.self.dir}/${sb2gsWhlName}`)).bytes());
 
   await pyodide.runPythonAsync(`
 import micropip
