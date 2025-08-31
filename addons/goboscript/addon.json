@@ -1,0 +1,36 @@
+{
+  "name": "Goboscript integration",
+  "description": "Integration with goboscript.",
+  "tags": [
+    "community", "editor"
+  ],
+  "credits": [
+    {
+      "name": "faretek1"
+    },
+    {
+      "name": "aspizu"
+    },
+    {
+      "name": "TheCommCraft"
+    }
+  ],
+  "enabledByDefault": true,
+  "versionAdded": "1.44.0",
+  "userscripts": [
+    {
+      "url": "sb2gs.js",
+      "matches": [
+        "projects"
+      ]
+    }
+  ],
+  "userstyles": [
+    {
+      "url": "style.css",
+      "matches": [
+        "projects"
+      ]
+    }
+  ]
+}
