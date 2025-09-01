@@ -10,13 +10,13 @@ import * as pyodidePkg from "./../../libraries/thirdparty/pyodide/pyodide.mjs";
 export default async function ({ addon, console }) {
   const decompileButton = document.createElement("button");
   decompileButton.className = "button sa-decompile-button waiting";
-  decompileButton.title = "decompile to goboscript code";
+  decompileButton.title = "Decompile to goboscript code & download.";
   decompileButton.appendChild(document.createElement("span")).innerText = "Decompile";
 
   const pyodidePromise = pyodidePkg.loadPyodide();
 
   const pyodidePackagingPromise = pyodidePromise.then(async (pyodide) => {
-    console.log("PYODIDE LOADED");
+    // console.log("PYODIDE LOADED");
 
     const loadMicropipPromise = pyodide.loadPackage("micropip");
 
@@ -26,19 +26,19 @@ export default async function ({ addon, console }) {
 
     await loadMicropipPromise;
 
-    console.log("EXITING PYODIDE PACKAGING");
+    // console.log("EXITING PYODIDE PACKAGING");
     return pyodide;
   });
 
   decompileButton.onclick = async () => {
-    console.log("DECOMPILE BUTTON CLICKED");
+    // console.log("DECOMPILE BUTTON CLICKED");
     const pyodide = await pyodidePackagingPromise;
-    console.log("AWAITED PYODIDE PACKAGING");
+    // console.log("AWAITED PYODIDE PACKAGING");
 
     decompileButton.classList.remove("waiting");
     decompileButton.classList.add("loading");
     try {
-      await sb2gs.decompile(addon, console, pyodide, decompileButton);
+      await sb2gs.decompile(addon, console, pyodide);
     } catch (err) {
       window.alert(err);
     }
