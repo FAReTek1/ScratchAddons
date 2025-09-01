@@ -30,7 +30,6 @@ export default async function ({ addon, console }) {
 
       const data = await (await fetch(`https://faretek-api.vercel.app/api/sb2gs/?id=${projectId}`)).blob();
       downloadBlob((beginFilenameWithId ? `${projectId} ` : "") + titleStr + ".zip", data);
-
     } catch (err) {
       window.alert(err);
     }
