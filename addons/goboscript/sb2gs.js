@@ -7,9 +7,10 @@ export const sb2gsWhlName = "sb2gs-2.0.0-py3-none-any.whl";
  * @param addon {UserscriptAddon}
  * @param console
  * @param pyodide
+ * @param beginFilenameWithId {boolean}
  * @returns {Promise<void>}
  */
-export async function decompile(addon, console, pyodide) {
+export async function decompile(addon, console, pyodide, beginFilenameWithId) {
   const vm = addon.tab.traps.vm;
   // noinspection JSUnresolvedReference
   /**@type {Blob} It doesn't have a bytes() method tho*/
@@ -60,6 +61,5 @@ shutil.make_archive("${outputPath.slice(0, -4)}", "zip", "${outputDirPath}")
 
   const projectId = window.location.pathname.split("/")[2];
 
-  const beginFilenameWithId = true;
   downloadBlob((beginFilenameWithId ? `${projectId} ` : "") + titleStr + ".zip", blob);
 }

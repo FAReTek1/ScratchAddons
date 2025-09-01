@@ -30,7 +30,7 @@ export default async function ({ addon, console }) {
     return pyodide;
   });
 
-  decompileButton.onclick = async () => {
+  decompileButton.onclick = async (e) => {
     // console.log("DECOMPILE BUTTON CLICKED");
     const pyodide = await pyodidePackagingPromise;
     // console.log("AWAITED PYODIDE PACKAGING");
@@ -38,7 +38,7 @@ export default async function ({ addon, console }) {
     decompileButton.classList.remove("waiting");
     decompileButton.classList.add("loading");
     try {
-      await sb2gs.decompile(addon, console, pyodide);
+      await sb2gs.decompile(addon, console, pyodide, e.shiftKey !== addon.settings.get("beginFilenameWithId"));
     } catch (err) {
       window.alert(err);
     }

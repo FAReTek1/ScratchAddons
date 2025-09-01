@@ -1,7 +1,7 @@
 {
   "name": "Goboscript integration",
   "description": "Integration with goboscript. Adds a decompile button the the project page, next to the Remix button.",
-  "tags": ["community", "editor", "projectPage", "beta"],
+  "tags": ["editor", "projectPage", "beta"],
   "credits": [
     {
       "name": "faretek1",
@@ -40,6 +40,19 @@
       "type": "boolean",
       "default": true,
       "description": "Ignore the meta.vm value in project.json when decompiling."
+    },
+    {
+      "name": "Begin filename with ID",
+      "id": "beginFilenameWithId",
+      "type": "boolean",
+      "default": false,
+      "description": "Inverts the shift+click decompile button behaviour, prepending the project id by default."
+    }
+  ],
+  "info": [
+    {
+      "text": "sb2gs: Holding shift while clicking the decompile button will prepend the project id.",
+      "id": "info1"
     }
   ]
 }
