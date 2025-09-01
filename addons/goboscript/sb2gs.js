@@ -1,7 +1,6 @@
 /* global chrome */
 import downloadBlob from "../../libraries/common/cs/download-blob.js";
 
-
 export const sb2gsWhlName = "sb2gs-2.0.0-py3-none-any.whl";
 
 /**
@@ -54,8 +53,8 @@ shutil.make_archive("${outputPath.slice(0, -4)}", "zip", "${outputDirPath}")
   const title = isOwn ? document.querySelector(".project-title input") : document.querySelector(".project-title");
   const titleStr = isOwn ? title.value : title.innerText;
 
-  const projectId = window.location.pathname.split("/")[2]
+  const projectId = window.location.pathname.split("/")[2];
 
   const beginFilenameWithId = true;
-  downloadBlob((beginFilenameWithId ? `${projectId} ` : "") + titleStr + '.zip', blob);
+  downloadBlob((beginFilenameWithId ? `${projectId} ` : "") + titleStr + ".zip", blob);
 }

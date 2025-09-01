@@ -1,5 +1,5 @@
 /* global chrome */
-import * as sb2gs from './sb2gs.js';
+import * as sb2gs from "./sb2gs.js";
 import * as pyodidePkg from "./pyodide/pyodide.mjs";
 
 /**
@@ -7,7 +7,7 @@ import * as pyodidePkg from "./pyodide/pyodide.mjs";
  * @param console
  * @returns {Promise<void>}
  */
-export default async function({ addon, console }) {
+export default async function ({ addon, console }) {
   const decompileButton = document.createElement("button");
   decompileButton.className = "button sa-decompile-button waiting";
   decompileButton.title = "decompile to goboscript code";
@@ -20,8 +20,7 @@ export default async function({ addon, console }) {
 
     const loadMicropipPromise = pyodide.loadPackage("micropip");
 
-    const sb2gsWhlFile = await ((await
-      fetch(`${addon.self.dir}/${sb2gs.sb2gsWhlName}`)).bytes());
+    const sb2gsWhlFile = await (await fetch(`${addon.self.dir}/${sb2gs.sb2gsWhlName}`)).bytes();
 
     pyodide.FS.writeFile(`/${sb2gs.sb2gsWhlName}`, sb2gsWhlFile);
 
@@ -41,7 +40,7 @@ export default async function({ addon, console }) {
     await sb2gs.decompile(addon, console, pyodide, decompileButton);
     decompileButton.classList.remove("loading");
     decompileButton.classList.add("waiting");
-  }
+  };
 
   while (true) {
     const seeInside = await addon.tab.waitForElement(".see-inside-button", {
