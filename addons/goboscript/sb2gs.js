@@ -11,7 +11,8 @@ export const sb2gsWhlName = "sb2gs-2.0.0-py3-none-any.whl";
  */
 export async function decompile(addon, console, pyodide) {
   const vm = addon.tab.traps.vm;
-  /**@type {Blob}*/
+  // noinspection JSUnresolvedReference
+  /**@type {Blob} It doesn't have a bytes() method tho*/
   const project = await vm.saveProjectSb3();
   const inputPath = "/input.sb3";
   const outputDirPath = "/workdir";

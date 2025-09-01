@@ -4,13 +4,12 @@
   "tags": ["community", "editor"],
   "credits": [
     {
-      "name": "faretek1"
+      "name": "faretek1",
+      "link": "https://scratch.mit.edu/users/faretek1/"
     },
     {
-      "name": "aspizu"
-    },
-    {
-      "name": "TheCommCraft"
+      "name": "aspizu",
+      "link": "https://scratch.mit.edu/users/aspizu/"
     }
   ],
   "enabledByDefault": true,
