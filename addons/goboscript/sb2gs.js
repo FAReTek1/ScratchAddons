@@ -31,11 +31,15 @@ print(package_list)
 from pathlib import Path
 import sb2gs
 import shutil
+import json
 
 input_path = Path("${inputPath}")
 output_dir_path = Path("${outputDirPath}")
 
-sb2gs.decompile(input_path, output_dir_path, ignore_vm=True, ignore_semver=True)
+sb2gs.decompile(input_path, output_dir_path,
+  ignore_semver=json.loads("${addon.settings.get("ignoreSemver")}"),
+  ignore_vm=json.loads("${addon.settings.get("ignoreVM")}"),
+)
 
 shutil.make_archive("${outputPath.slice(0, -4)}", "zip", "${outputDirPath}")
 `);

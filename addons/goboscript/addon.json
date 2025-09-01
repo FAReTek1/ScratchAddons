@@ -1,7 +1,7 @@
 {
   "name": "Goboscript integration",
-  "description": "Integration with goboscript.",
-  "tags": ["community", "editor"],
+  "description": "Integration with goboscript. Adds a decompile button the the project page, next to the Remix button.",
+  "tags": ["community", "editor", "projectPage", "beta"],
   "credits": [
     {
       "name": "faretek1",
@@ -24,6 +24,22 @@
     {
       "url": "style.css",
       "matches": ["projects"]
+    }
+  ],
+  "settings": [
+    {
+      "name": "Ignore semver",
+      "id": "ignoreSemver",
+      "type": "boolean",
+      "default": true,
+      "description": "Ignore the meta.semver value in project.json when decompiling."
+    },
+    {
+      "name": "Ignore vm",
+      "id": "ignoreVM",
+      "type": "boolean",
+      "default": true,
+      "description": "Ignore the meta.vm value in project.json when decompiling."
     }
   ]
 }
