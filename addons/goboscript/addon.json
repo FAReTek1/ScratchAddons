@@ -1,6 +1,6 @@
 {
   "name": "Goboscript integration",
-  "description": "Integration with goboscript. Adds a decompile button the the project page, next to the Remix button.",
+  "description": "Integration with goboscript. Adds a decompile button on the project page, next to the Remix button.",
   "tags": ["editor", "projectPage", "beta"],
   "credits": [
     {
@@ -51,8 +51,14 @@
   ],
   "info": [
     {
+      "type": "notice",
       "text": "sb2gs: Holding shift while clicking the decompile button will prepend the project id.",
       "id": "info1"
+    },
+    {
+      "type": "warning",
+      "text": "sb2gs: The decompile button will not work on some projects. You can try filing an issue here, providing the project id: https://github.com/aspizu/sb2gs/issues",
+      "id": "info2"
     }
   ]
 }
