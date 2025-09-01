@@ -34,7 +34,7 @@ import shutil
 input_path = Path("${inputPath}")
 output_dir_path = Path("${outputDirPath}")
 
-sb2gs.decompile(input_path, output_dir_path)
+sb2gs.decompile(input_path, output_dir_path, ignore_vm=True, ignore_semver=True)
 
 shutil.make_archive("${outputPath.slice(0, -4)}", "zip", "${outputDirPath}")
 `);
