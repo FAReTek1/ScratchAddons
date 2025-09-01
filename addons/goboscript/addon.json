@@ -19,7 +19,7 @@
   "versionAdded": "1.44.0",
   "userscripts": [
     {
-      "url": "sb2gs.js",
+      "url": "userscript.js",
       "matches": [
         "projects"
       ]
