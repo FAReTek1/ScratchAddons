@@ -8,10 +8,9 @@ export const sb2gsWhlName = "sb2gs-2.0.0-py3-none-any.whl";
  * @param addon {UserscriptAddon}
  * @param console
  * @param pyodide
- * @param decompileButton {HTMLButtonElement}
  * @returns {Promise<void>}
  */
-export async function decompile(addon, console, pyodide, decompileButton) {
+export async function decompile(addon, console, pyodide) {
   const vm = addon.tab.traps.vm;
   /**@type {Blob}*/
   const project = await vm.saveProjectSb3();

@@ -21,3 +21,11 @@
   vertical-align: middle;
   content: "";
 }
+
+.sa-decompile-button.waiting:before {
+  pointer-events: none;
+}
+
+.sa-decompile-button.loading:before {
+  opacity: 0.6;
+}
