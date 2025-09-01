@@ -37,7 +37,11 @@ export default async function ({ addon, console }) {
 
     decompileButton.classList.remove("waiting");
     decompileButton.classList.add("loading");
-    await sb2gs.decompile(addon, console, pyodide, decompileButton);
+    try {
+      await sb2gs.decompile(addon, console, pyodide, decompileButton);
+    } catch (err) {
+      window.alert(err);
+    }
     decompileButton.classList.remove("loading");
     decompileButton.classList.add("waiting");
   };
