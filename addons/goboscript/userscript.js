@@ -1,6 +1,6 @@
 /* global chrome */
 import * as sb2gs from "./sb2gs.js";
-import * as pyodidePkg from "./pyodide/pyodide.mjs";
+import * as pyodidePkg from "./../../libraries/thirdparty/pyodide/pyodide.mjs";
 
 /**
  * @param addon {UserscriptAddon}

@@ -71,6 +71,7 @@
         "addon-api/*",
         "addons/*",
         "libraries/*/cs/*",
+        "libraries/*/pyodide/*",
         "addons-l10n/*/*.json",
         "images/cs/*"
       ],
