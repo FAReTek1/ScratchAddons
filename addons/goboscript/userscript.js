@@ -28,8 +28,13 @@ export default async function ({ addon, console }) {
     try {
       const beginFilenameWithId = e.shiftKey !== addon.settings.get("beginFilenameWithId");
 
-      const data = await (await fetch(`https://faretek-api.vercel.app/api/sb2gs/?id=${projectId}`)).blob();
-      downloadBlob((beginFilenameWithId ? `${projectId} ` : "") + titleStr + ".zip", data);
+      const resp = await fetch(`https://faretek-api.vercel.app/api/sb2gs/?id=${projectId}`);
+      if (resp.status !== 200) {
+        window.alert(`Failed with code ${resp.status}. Response content: ${await resp.text()}`);
+      } else {
+        const data = await resp.blob();
+        downloadBlob((beginFilenameWithId ? `${projectId} ` : "") + titleStr + ".zip", data);
+      }
     } catch (err) {
       window.alert(err);
     }
